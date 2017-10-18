@@ -132,6 +132,9 @@
             <pointsize>18</pointsize>
            </font>
           </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
          </widget>
         </item>
         <item row="3" column="0">

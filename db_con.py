@@ -72,6 +72,7 @@ class Ui_Dialog(object):
         font.setFamily("Caladea")
         font.setPointSize(18)
         self.passwordLineEdit.setFont(font)
+        self.passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
         self.passwordLineEdit.setObjectName("passwordLineEdit")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.passwordLineEdit)
         self.databaseNameLabel = QtWidgets.QLabel(self.frame)

@@ -35,7 +35,7 @@ class mywindow(QtWidgets.QDialog):
             cur = con.cursor() ;
             print("connection closed") ;
             self.setToolTip("Developed By Natesh M Bhat") ;
-            time.sleep(1) ;
+            sleep(1) ;
             cur.close() ;
             con.close() ;
 
@@ -46,15 +46,14 @@ class mywindow(QtWidgets.QDialog):
 
 class datahandler(object):
     def __init__(self):
-        ui.submit_PushButton.mouseReleaseEvent = self.connecttosql ;
-        dbui.connect_pushbutton.mouseReleaseEvent = self.initial_connect  ;
+        ui.submit_PushButton.clicked.connect( self.connecttosql ) ;
+        dbui.connect_pushbutton.clicked.connect( self.initial_connect ) ;
 
     def initial_connect(self, event):
         self.url  = dbui.urlLineEdit.text() ;
         self.user = dbui.usernameLineEdit.text()
         self.password = dbui.passwordLineEdit.text()
         self.database = dbui.databaseNameLineEdit.text() ;
-
 
         try:
             if not self.database:
@@ -69,6 +68,7 @@ class datahandler(object):
 
             # cur = con.cursor() ;
             self.showtooltip("Connection Sucessful ! ") ;
+            self.con.autocommit(True) ;
             print("success") ;
             dbuidialog.close() ;
             Dialog.show()
@@ -88,6 +88,7 @@ Failed to Connect to Database : "{}" \nHost : "{}"
         mystring = mystring.replace(">" , "&gt;");
         return mystring ;
 
+
     def showtooltip(self, text):
         tt = QtWidgets.QToolTip ;
         myfont = QtGui.QFont() ;
@@ -102,8 +103,8 @@ Failed to Connect to Database : "{}" \nHost : "{}"
         tt.showText(pos, text, Dialog ) ;
 
 
-    def connecttosql(self , event):
 
+    def connecttosql(self , event):
         question = self.replace(ui.question_textedit.toPlainText()) ;
 
         if not question:
