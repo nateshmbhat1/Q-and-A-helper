@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>728</width>
+    <height>363</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>728</width>
+    <height>363</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Database Login</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="horizontalSpacing">
+         <number>21</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>30</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="urllabel">
+          <property name="font">
+           <font>
+            <family>Century</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Host            :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="urlLineEdit">
+          <property name="minimumSize">
+           <size>
+            <width>350</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Caladea</family>
+            <pointsize>19</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="usernameLabel">
+          <property name="font">
+           <font>
+            <family>Century</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Username   :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="usernameLineEdit">
+          <property name="font">
+           <font>
+            <family>Caladea</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="passwordLabel">
+          <property name="font">
+           <font>
+            <family>Century</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Password    :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="passwordLineEdit">
+          <property name="font">
+           <font>
+            <family>Caladea</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="databaseNameLabel">
+          <property name="font">
+           <font>
+            <family>Century</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Database name :</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="databaseNameLineEdit">
+          <property name="font">
+           <font>
+            <family>Caladea</family>
+            <pointsize>18</pointsize>
+           </font>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

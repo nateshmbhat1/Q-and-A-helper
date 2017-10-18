@@ -1,0 +1,111 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'db_con_ui.ui'
+#
+# Created by: PyQt5 UI code generator 5.6
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(728, 363)
+        Dialog.setMaximumSize(QtCore.QSize(728, 363))
+        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.frame = QtWidgets.QFrame(Dialog)
+        self.frame.setStyleSheet("")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.formLayout = QtWidgets.QFormLayout()
+        self.formLayout.setHorizontalSpacing(21)
+        self.formLayout.setVerticalSpacing(30)
+        self.formLayout.setObjectName("formLayout")
+        self.urllabel = QtWidgets.QLabel(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Century")
+        font.setPointSize(18)
+        self.urllabel.setFont(font)
+        self.urllabel.setObjectName("urllabel")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.urllabel)
+        self.urlLineEdit = QtWidgets.QLineEdit(self.frame)
+        self.urlLineEdit.setMinimumSize(QtCore.QSize(350, 0))
+        font = QtGui.QFont()
+        font.setFamily("Caladea")
+        font.setPointSize(19)
+        self.urlLineEdit.setFont(font)
+        self.urlLineEdit.setObjectName("urlLineEdit")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.urlLineEdit)
+        self.usernameLabel = QtWidgets.QLabel(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Century")
+        font.setPointSize(18)
+        self.usernameLabel.setFont(font)
+        self.usernameLabel.setObjectName("usernameLabel")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.usernameLabel)
+        self.usernameLineEdit = QtWidgets.QLineEdit(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Caladea")
+        font.setPointSize(18)
+        self.usernameLineEdit.setFont(font)
+        self.usernameLineEdit.setObjectName("usernameLineEdit")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.usernameLineEdit)
+        self.passwordLabel = QtWidgets.QLabel(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Century")
+        font.setPointSize(18)
+        self.passwordLabel.setFont(font)
+        self.passwordLabel.setObjectName("passwordLabel")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.passwordLabel)
+        self.passwordLineEdit = QtWidgets.QLineEdit(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Caladea")
+        font.setPointSize(18)
+        self.passwordLineEdit.setFont(font)
+        self.passwordLineEdit.setObjectName("passwordLineEdit")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.passwordLineEdit)
+        self.databaseNameLabel = QtWidgets.QLabel(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Century")
+        font.setPointSize(18)
+        self.databaseNameLabel.setFont(font)
+        self.databaseNameLabel.setObjectName("databaseNameLabel")
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.LabelRole, self.databaseNameLabel)
+        self.databaseNameLineEdit = QtWidgets.QLineEdit(self.frame)
+        font = QtGui.QFont()
+        font.setFamily("Caladea")
+        font.setPointSize(18)
+        self.databaseNameLineEdit.setFont(font)
+        self.databaseNameLineEdit.setObjectName("databaseNameLineEdit")
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.databaseNameLineEdit)
+        self.verticalLayout_2.addLayout(self.formLayout)
+        self.verticalLayout.addWidget(self.frame, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Database Login"))
+        self.urllabel.setText(_translate("Dialog", "Host            :"))
+        self.usernameLabel.setText(_translate("Dialog", "Username   :"))
+        self.passwordLabel.setText(_translate("Dialog", "Password    :"))
+        self.databaseNameLabel.setText(_translate("Dialog", "Database name :"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Dialog = QtWidgets.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
+
