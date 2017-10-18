@@ -46,8 +46,11 @@ class mywindow(QtWidgets.QDialog):
 
 class datahandler(object):
     def __init__(self):
-        ui.submit_PushButton.clicked.connect( self.connecttosql ) ;
-        dbui.connect_pushbutton.clicked.connect( self.initial_connect ) ;
+        ui.submit_PushButton.mousePressEvent = self.connecttosql
+        ui.submit_PushButton.keyPressEvent= self.connecttosql
+        dbui.connect_pushbutton.mousePressEvent= self.initial_connect ;
+        dbui.connect_pushbutton.keyPressEvent= self.initial_connect ;
+
 
     def initial_connect(self, event):
         self.url  = dbui.urlLineEdit.text() ;
