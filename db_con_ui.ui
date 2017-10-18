@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>Database Login</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>decoders.ico</normaloff>decoders.ico</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>0</number>

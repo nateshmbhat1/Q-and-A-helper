@@ -18,6 +18,9 @@ class Ui_Dialog(object):
         font.setBold(True)
         font.setWeight(75)
         Dialog.setFont(font)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("decoders.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        Dialog.setWindowIcon(icon)
         Dialog.setSizeGripEnabled(True)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Dialog)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -58,6 +61,7 @@ class Ui_Dialog(object):
         self.question_textedit.setMinimumSize(QtCore.QSize(800, 0))
         self.question_textedit.setMaximumSize(QtCore.QSize(16777215, 100))
         font = QtGui.QFont()
+        font.setFamily("Century")
         font.setPointSize(18)
         self.question_textedit.setFont(font)
         self.question_textedit.setTabChangesFocus(True)
@@ -229,6 +233,7 @@ class Ui_Dialog(object):
         self.bLabel_2.setText(_translate("Dialog", "B )"))
         self.cLabel.setText(_translate("Dialog", "C )"))
         self.dLabel.setText(_translate("Dialog", "D )"))
+        self.codesnippet_textedit.setStatusTip(_translate("Dialog", "Code Snippet"))
         self.submit_PushButton.setText(_translate("Dialog", "Submit"))
 
 

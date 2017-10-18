@@ -21,6 +21,10 @@
   <property name="windowTitle">
    <string>Decoders</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>decoders.ico</normaloff>decoders.ico</iconset>
+  </property>
   <property name="sizeGripEnabled">
    <bool>true</bool>
   </property>

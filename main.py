@@ -34,6 +34,8 @@ class mywindow(QtWidgets.QDialog):
             con = pymysql.connect() ;
             cur = con.cursor() ;
             print("connection closed") ;
+            self.setToolTip("Developed By Natesh M Bhat") ;
+            time.sleep(1) ;
             cur.close() ;
             con.close() ;
 
