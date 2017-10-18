@@ -48,16 +48,20 @@ class datahandler(object):
         dbui.connect_pushbutton.mouseReleaseEvent = self.initial_connect  ;
 
     def initial_connect(self, event):
-        url  = dbui.urlLineEdit.text() ;
-        user = dbui.usernameLineEdit.text()
-        password = dbui.passwordLineEdit.text()
-        database = dbui.databaseNameLineEdit.text() ;
+        self.url  = dbui.urlLineEdit.text() ;
+        self.user = dbui.usernameLineEdit.text()
+        self.password = dbui.passwordLineEdit.text()
+        self.database = dbui.databaseNameLineEdit.text() ;
+
 
         try:
-            self.con = pymysql.connect(host=url,
-                                  user=user,
-                                  password=password,
-                                  db=database,
+            if not self.database:
+                raise Exception("Please Enter the database name :")
+
+            self.con = pymysql.connect(host=self.url,
+                                  user=self.user,
+                                  password=self.password,
+                                  db=self.database,
                                   charset='utf8mb4',
                                   cursorclass=pymysql.cursors.DictCursor);
 
@@ -70,7 +74,7 @@ class datahandler(object):
         except Exception as e:
             QtWidgets.QMessageBox.critical(Dialog , "Failed to Connect" , """
 Failed to Connect to Database : "{}" \nHost : "{}"
-\n\nError Details :-\n\n{}""".format(database, url , e)) ;
+\n\nError Details :-\n\n{}""".format(self.database, self.url , e)) ;
 
 
 
@@ -113,13 +117,12 @@ Failed to Connect to Database : "{}" \nHost : "{}"
 
 
         try:
-            self.con = pymysql.connect(host='localhost',
-                                  user='root',
-                                  password='toor',
-                                  db='mydatabase',
+            self.con = pymysql.connect(host=self.url,
+                                  user=self.user,
+                                  password=self.password,
+                                  db=self.database,
                                   charset='utf8mb4',
                                   cursorclass=pymysql.cursors.DictCursor);
-
 
             with self.con.cursor() as cur:
 
