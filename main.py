@@ -36,9 +36,27 @@ class datahandler(object):
         mystring = mystring.replace(">" , "&gt;");
         return mystring ;
 
+    def showtooltip(self, text):
+        tt = QtWidgets.QToolTip ;
+        myfont = QtGui.QFont() ;
+        myfont.setFamily("caladea")
+        myfont.setBold(True)
+        myfont.setPointSize(20)
+        tt.setFont(myfont)
+        mywin = Dialog.frameGeometry() ;
+        pos = mywin.center()
+        pos.setX(pos.x() - 6.5 * len(text));
+        pos.setY(mywin.y()-20)
+        tt.showText(pos, text, Dialog ) ;
+
 
     def connecttosql(self , event):
-        question = self.replace(ui.question_textedit.toPlainText() ) ;
+
+        question = self.replace(ui.question_textedit.toPlainText()) ;
+        if not question:
+            QtWidgets.QMessageBox.warning(Dialog , "Empty Question field" , "Make sure that the question field is not Empty ! " , QtWidgets.QMessageBox.Ok) ;
+            return ;
+
         opa = self.replace(ui.alineEdit.text()) ;
         opb = self.replace(ui.bLineEdit.text() ) ;
         opc = self.replace(ui.cLineEdit.text()  ) ;
@@ -69,7 +87,12 @@ class datahandler(object):
 
             cur.execute(command , strings);
             con.commit();
+            for i in ui.frame.findChildren((QtWidgets.QTextEdit , QtWidgets.QLineEdit)):
+                i.clear() ;
+
+            self.showtooltip("Added to Database");
         except Exception as e:
+            self.showtooltip("Failed Adding to Database") ;
             print(e) ;
 
 
@@ -83,7 +106,7 @@ if __name__ == "__main__":
 
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
-    Dialog.setWindowFlags(QtCore.Qt.FramelessWindowHint) ;
+    # Dialog.setWindowFlags(QtCore.Qt.FramelessWindowHint) ;
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
     datahandler() ;
