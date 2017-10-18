@@ -158,8 +158,43 @@
      </layout>
     </widget>
    </item>
+   <item alignment="Qt::AlignHCenter">
+    <widget class="QPushButton" name="connect_pushbutton">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>44</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>databaseNameLineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>connect_pushbutton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>466</x>
+     <y>255</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>340</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

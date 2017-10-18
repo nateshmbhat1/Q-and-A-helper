@@ -87,8 +87,16 @@ class Ui_Dialog(object):
         self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.databaseNameLineEdit)
         self.verticalLayout_2.addLayout(self.formLayout)
         self.verticalLayout.addWidget(self.frame, 0, QtCore.Qt.AlignHCenter|QtCore.Qt.AlignVCenter)
+        self.connect_pushbutton = QtWidgets.QPushButton(Dialog)
+        self.connect_pushbutton.setMinimumSize(QtCore.QSize(300, 44))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.connect_pushbutton.setFont(font)
+        self.connect_pushbutton.setObjectName("connect_pushbutton")
+        self.verticalLayout.addWidget(self.connect_pushbutton, 0, QtCore.Qt.AlignHCenter)
 
         self.retranslateUi(Dialog)
+        self.databaseNameLineEdit.returnPressed.connect(self.connect_pushbutton.click)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
@@ -98,6 +106,7 @@ class Ui_Dialog(object):
         self.usernameLabel.setText(_translate("Dialog", "Username   :"))
         self.passwordLabel.setText(_translate("Dialog", "Password    :"))
         self.databaseNameLabel.setText(_translate("Dialog", "Database name :"))
+        self.connect_pushbutton.setText(_translate("Dialog", "Connect"))
 
 
 if __name__ == "__main__":

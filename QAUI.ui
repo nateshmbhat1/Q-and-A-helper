@@ -104,6 +104,7 @@
              </property>
              <property name="font">
               <font>
+               <family>Century</family>
                <pointsize>18</pointsize>
               </font>
              </property>
@@ -381,6 +382,9 @@
                <family>Century</family>
                <pointsize>15</pointsize>
               </font>
+             </property>
+             <property name="statusTip">
+              <string>Code Snippet</string>
              </property>
             </widget>
            </item>

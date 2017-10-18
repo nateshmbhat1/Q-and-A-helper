@@ -5,6 +5,7 @@ import pymysql
 from ui import Ui_Dialog ;
 from time import sleep
 from threading import Thread;
+import db_con
 
 from PyQt5 import QtCore , QtGui , QtWidgets
 
@@ -23,10 +24,55 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 
+class mywindow(QtWidgets.QDialog):
+    def __init__(self,parent=None):
+        QtWidgets.QDialog.__init__(self, parent)
+        self.setMouseTracking(True) ;
+
+    def closeEvent(self,event):
+        try:
+            con = pymysql.connect() ;
+            cur = con.cursor() ;
+            print("connection closed") ;
+            cur.close() ;
+            con.close() ;
+
+        except Exception as e:
+            print(e) ;
+
+
 
 class datahandler(object):
     def __init__(self):
         ui.submit_PushButton.mouseReleaseEvent = self.connecttosql ;
+        dbui.connect_pushbutton.mouseReleaseEvent = self.initial_connect  ;
+
+    def initial_connect(self, event):
+        url  = dbui.urlLineEdit.text() ;
+        user = dbui.usernameLineEdit.text()
+        password = dbui.passwordLineEdit.text()
+        database = dbui.databaseNameLineEdit.text() ;
+
+        try:
+            self.con = pymysql.connect(host=url,
+                                  user=user,
+                                  password=password,
+                                  db=database,
+                                  charset='utf8mb4',
+                                  cursorclass=pymysql.cursors.DictCursor);
+
+            # cur = con.cursor() ;
+            self.showtooltip("Connection Sucessful ! ") ;
+            print("success") ;
+            dbuidialog.close() ;
+            Dialog.show()
+
+        except Exception as e:
+            QtWidgets.QMessageBox.critical(Dialog , "Failed to Connect" , """
+Failed to Connect to Database : "{}" \nHost : "{}"
+\n\nError Details :-\n\n{}""".format(database, url , e)) ;
+
+
 
     def replace(self , mystring ):
         mystring = mystring.replace("&" , "&amp;");
@@ -53,6 +99,7 @@ class datahandler(object):
     def connecttosql(self , event):
 
         question = self.replace(ui.question_textedit.toPlainText()) ;
+
         if not question:
             QtWidgets.QMessageBox.warning(Dialog , "Empty Question field" , "Make sure that the question field is not Empty ! " , QtWidgets.QMessageBox.Ok) ;
             return ;
@@ -66,38 +113,40 @@ class datahandler(object):
 
 
         try:
-            con = pymysql.connect(host='localhost',
+            self.con = pymysql.connect(host='localhost',
                                   user='root',
                                   password='toor',
                                   db='mydatabase',
                                   charset='utf8mb4',
                                   cursorclass=pymysql.cursors.DictCursor);
-            cur = con.cursor();
 
-            command = """insert into tablename (Question , optiona , optionb , optionc , optiond , correct , codesnippet) values (%s, %s , %s, %s , %s , %s , %s ) """ ;
-            strings = (
-                question ,
-                opa ,
-                opb ,
-                opc ,
-                opd,
-                rightop,
-                codesnippet
-            );
 
-            cur.execute(command , strings);
-            con.commit();
-            for i in ui.frame.findChildren((QtWidgets.QTextEdit , QtWidgets.QLineEdit)):
-                i.clear() ;
+            with self.con.cursor() as cur:
 
-            self.showtooltip("Added to Database");
+                command = """insert into tablename (Question , optiona , optionb , optionc , optiond , correct , codesnippet) values (%s, %s , %s, %s , %s , %s , %s ) """ ;
+                strings = (
+                    question ,
+                    opa ,
+                    opb ,
+                    opc ,
+                    opd,
+                    rightop,
+                    codesnippet
+                );
+
+                cur.execute(command , strings);
+                self.con.commit();
+                for i in ui.frame.findChildren((QtWidgets.QTextEdit , QtWidgets.QLineEdit)):
+                    i.clear() ;
+
+                self.showtooltip("Added to Database");
+
         except Exception as e:
             self.showtooltip("Failed Adding to Database") ;
             print(e) ;
 
-
         finally:
-            con.close();
+            self.con.close();
 
 
 
@@ -105,11 +154,17 @@ if __name__ == "__main__":
     import sys
 
     app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
+    Dialog = mywindow()
     # Dialog.setWindowFlags(QtCore.Qt.FramelessWindowHint) ;
     ui = Ui_Dialog()
     ui.setupUi(Dialog)
+
+
+    dbuidialog = QtWidgets.QDialog();
+    dbui = db_con.Ui_Dialog() ;
+    dbui.setupUi(dbuidialog) ;
     datahandler() ;
-    Dialog.show()
+    dbuidialog.exec_() ;
+
     sys.exit(app.exec_())
 
