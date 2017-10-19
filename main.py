@@ -122,6 +122,7 @@ Failed to Connect to Database : "{}" \nHost : "{}"
 
         if not( question and opa and opb and opc and opd and rightop):
             QtWidgets.QMessageBox.warning(Dialog , "Empty Fields" , "Make sure that all the Question and Options fields are filled before submitting them to the database the database before submitting them to the database") ;
+            return ;
         if not ui.tablename_LineEdit.text():
             QtWidgets.QMessageBox.warning(Dialog, "Empty Table Name",
                                           "Table name should not be empty ! Make sure that the right table name is specified ! ",
@@ -150,13 +151,13 @@ Failed to Connect to Database : "{}" \nHost : "{}"
                 );
 
                 cur.execute(command , strings);
+                self.showtooltip("Added to Database") ;
                 self.con.commit();
                 for i in ui.frame.findChildren((QtWidgets.QTextEdit , QtWidgets.QLineEdit)):
                     i.clear() ;
                 ui.tablename_LineEdit.setText(tablename) ;
 
-                self.showtooltip("Added to Database");
-                self.con.close() ;
+
 
         except Exception as e:
             print("Failed") ;

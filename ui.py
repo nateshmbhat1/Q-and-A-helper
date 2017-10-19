@@ -242,7 +242,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "DecodersQA"))
         self.question_label.setText(_translate("MainWindow", "Question"))
         self.tablename_LineEdit.setPlaceholderText(_translate("MainWindow", "Table Name"))
         self.label_2.setText(_translate("MainWindow", " A"))
