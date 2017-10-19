@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>958</width>
-    <height>726</height>
+    <width>844</width>
+    <height>655</height>
    </rect>
   </property>
   <property name="font">
@@ -61,30 +61,49 @@
         <item alignment="Qt::AlignTop">
          <widget class="QFrame" name="horizontalFrame_2">
           <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item alignment="Qt::AlignHCenter">
-            <widget class="QLabel" name="question_label">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>18</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Century Gothic</family>
-               <pointsize>17</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Question</string>
-             </property>
-            </widget>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item alignment="Qt::AlignLeft">
+              <widget class="QLineEdit" name="lineEdit_2"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="question_label">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>18</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Century Gothic</family>
+                 <pointsize>17</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>Question</string>
+               </property>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignRight">
+              <widget class="QLineEdit" name="lineEdit">
+               <property name="font">
+                <font>
+                 <pointsize>13</pointsize>
+                </font>
+               </property>
+               <property name="placeholderText">
+                <string>Table Name</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </item>
            <item alignment="Qt::AlignHCenter|Qt::AlignTop">
             <widget class="QTextEdit" name="question_textedit">
@@ -177,11 +196,15 @@
                 <widget class="QLabel" name="label_2">
                  <property name="font">
                   <font>
+                   <family>Caladea</family>
                    <pointsize>15</pointsize>
                   </font>
                  </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
                  <property name="text">
-                  <string>A )</string>
+                  <string>A</string>
                  </property>
                  <property name="buddy">
                   <cstring>alineEdit</cstring>
@@ -223,7 +246,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>B )</string>
+                  <string>B</string>
                  </property>
                  <property name="buddy">
                   <cstring>bLineEdit</cstring>
@@ -265,7 +288,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>C )</string>
+                  <string>C </string>
                  </property>
                  <property name="buddy">
                   <cstring>cLineEdit</cstring>
@@ -307,7 +330,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>D )</string>
+                  <string>D</string>
                  </property>
                  <property name="buddy">
                   <cstring>dLineEdit</cstring>
@@ -389,6 +412,9 @@
              </property>
              <property name="statusTip">
               <string>Code Snippet</string>
+             </property>
+             <property name="placeholderText">
+              <string>&lt;Code Snippet&gt;</string>
              </property>
             </widget>
            </item>
