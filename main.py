@@ -95,21 +95,23 @@ Failed to Connect to Database : "{}" \nHost : "{}"
 
 
     def showtooltip(self, text):
-        tt = QtWidgets.QToolTip ;
+        self.tt = QtWidgets.QToolTip ;
         myfont = QtGui.QFont() ;
         myfont.setFamily("caladea")
         myfont.setBold(True)
         myfont.setPointSize(20)
-        tt.setFont(myfont)
+        self.tt.setFont(myfont)
         mywin = Dialog.frameGeometry() ;
         pos = mywin.center()
         pos.setX(pos.x() - 6.5 * len(text));
         pos.setY(mywin.y()-20)
-        tt.showText(pos, text, Dialog ) ;
+
+        self.tt.showText(pos, text, Dialog) ;
 
 
 
     def connecttosql(self , event):
+
         question = self.replace(ui.question_textedit.toPlainText()) ;
 
         opa = self.replace(ui.alineEdit.text()) ;
@@ -129,13 +131,15 @@ Failed to Connect to Database : "{}" \nHost : "{}"
                                           QtWidgets.QMessageBox.Ok);
             return;
 
+
+
         try:
             self.con = pymysql.connect(host=self.url,
-                                  user=self.user,
-                                  password=self.password,
-                                  db=self.database,
-                                  charset='utf8mb4',
-                                  cursorclass=pymysql.cursors.DictCursor);
+                                       user=self.user,
+                                       password=self.password,
+                                       db=self.database,
+                                       charset='utf8mb4',
+                                       cursorclass=pymysql.cursors.DictCursor);
 
             with self.con.cursor() as cur:
 
@@ -151,8 +155,12 @@ Failed to Connect to Database : "{}" \nHost : "{}"
                 );
 
                 cur.execute(command , strings);
-                self.showtooltip("Added to Database") ;
+
                 self.con.commit();
+
+                QtWidgets.QMessageBox.information(Dialog , "Success" , "Saved to Database Successfully") ;
+
+                
                 for i in ui.frame.findChildren((QtWidgets.QTextEdit , QtWidgets.QLineEdit)):
                     i.clear() ;
                 ui.tablename_LineEdit.setText(tablename) ;
