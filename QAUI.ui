@@ -1,471 +1,453 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>844</width>
-    <height>655</height>
+    <width>993</width>
+    <height>725</height>
    </rect>
   </property>
-  <property name="font">
-   <font>
-    <family>Caladea</family>
-    <pointsize>10</pointsize>
-    <weight>75</weight>
-    <bold>true</bold>
-   </font>
-  </property>
   <property name="windowTitle">
-   <string>Decoders</string>
+   <string>MainWindow</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>decoders.ico</normaloff>decoders.ico</iconset>
-  </property>
-  <property name="sizeGripEnabled">
-   <bool>true</bool>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <widget class="QFrame" name="frame">
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <property name="leftMargin">
-       <number>0</number>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
       </property>
-      <property name="topMargin">
-       <number>0</number>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <item row="0" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <property name="spacing">
-         <number>0</number>
-        </property>
-        <item alignment="Qt::AlignTop">
-         <widget class="QFrame" name="horizontalFrame_2">
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout">
-             <item alignment="Qt::AlignLeft">
-              <widget class="QLineEdit" name="lineEdit_2"/>
-             </item>
-             <item>
-              <widget class="QLabel" name="question_label">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>18</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <family>Century Gothic</family>
-                 <pointsize>17</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>Question</string>
-               </property>
-              </widget>
-             </item>
-             <item alignment="Qt::AlignRight">
-              <widget class="QLineEdit" name="lineEdit">
-               <property name="font">
-                <font>
-                 <pointsize>13</pointsize>
-                </font>
-               </property>
-               <property name="placeholderText">
-                <string>Table Name</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item alignment="Qt::AlignHCenter|Qt::AlignTop">
-            <widget class="QTextEdit" name="question_textedit">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="minimumSize">
-              <size>
-               <width>800</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>16777215</width>
-               <height>100</height>
-              </size>
-             </property>
-             <property name="font">
-              <font>
-               <family>Century</family>
-               <pointsize>18</pointsize>
-              </font>
-             </property>
-             <property name="tabChangesFocus">
-              <bool>true</bool>
-             </property>
-             <property name="acceptRichText">
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignHCenter|Qt::AlignTop">
-         <widget class="QFrame" name="frame_2">
-          <property name="maximumSize">
-           <size>
-            <width>918</width>
-            <height>340</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
-           <property name="spacing">
-            <number>0</number>
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <item alignment="Qt::AlignTop">
+          <widget class="QFrame" name="horizontalFrame_2">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="text">
+                 <string/>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="question_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Minimum">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Century Gothic</family>
+                  <pointsize>14</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Question</string>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignRight">
+               <widget class="QLineEdit" name="tablename_LineEdit">
+                <property name="font">
+                 <font>
+                  <family>Century</family>
+                  <pointsize>13</pointsize>
+                 </font>
+                </property>
+                <property name="placeholderText">
+                 <string>Table Name</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+             <widget class="QTextEdit" name="question_textedit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>800</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Century</family>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
+              <property name="tabChangesFocus">
+               <bool>true</bool>
+              </property>
+              <property name="acceptRichText">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter|Qt::AlignTop">
+          <widget class="QFrame" name="frame_2">
+           <property name="maximumSize">
+            <size>
+             <width>918</width>
+             <height>340</height>
+            </size>
            </property>
-           <property name="leftMargin">
-            <number>0</number>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="topMargin">
-            <number>0</number>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
-           <property name="rightMargin">
-            <number>0</number>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout_6">
+              <property name="spacing">
+               <number>27</number>
+              </property>
+              <property name="bottomMargin">
+               <number>6</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_5">
+                <item>
+                 <widget class="QRadioButton" name="aradioButton">
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="font">
+                   <font>
+                    <family>Caladea</family>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true"/>
+                  </property>
+                  <property name="text">
+                   <string>A</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>alineEdit</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="alineEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>510</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Century</family>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_6">
+                <item alignment="Qt::AlignLeft">
+                 <widget class="QRadioButton" name="bradioButton">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignLeft">
+                 <widget class="QLabel" name="bLabel_2">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>B</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>bLineEdit</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="bLineEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>510</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Century</family>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <item>
+                 <widget class="QRadioButton" name="cradioButton">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="cLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>C </string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>cLineEdit</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="cLineEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>510</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Century</family>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QRadioButton" name="dradioButton">
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="dLabel">
+                  <property name="font">
+                   <font>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                  <property name="text">
+                   <string>D</string>
+                  </property>
+                  <property name="buddy">
+                   <cstring>dLineEdit</cstring>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="dLineEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>510</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Century</family>
+                    <pointsize>15</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QFrame" name="frame_3">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
            </property>
-           <property name="bottomMargin">
-            <number>0</number>
+           <property name="minimumSize">
+            <size>
+             <width>822</width>
+             <height>0</height>
+            </size>
            </property>
-           <item>
-            <layout class="QVBoxLayout" name="verticalLayout_6">
-             <property name="spacing">
-              <number>27</number>
-             </property>
-             <property name="bottomMargin">
-              <number>6</number>
-             </property>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_5">
-               <item>
-                <widget class="QRadioButton" name="aradioButton">
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_2">
-                 <property name="font">
-                  <font>
-                   <family>Caladea</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>A</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>alineEdit</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="alineEdit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>510</width>
-                   <height>32</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Century</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
-               <item alignment="Qt::AlignLeft">
-                <widget class="QRadioButton" name="bradioButton">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item alignment="Qt::AlignLeft">
-                <widget class="QLabel" name="bLabel_2">
-                 <property name="font">
-                  <font>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>B</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>bLineEdit</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="bLineEdit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>510</width>
-                   <height>32</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Century</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <item>
-                <widget class="QRadioButton" name="cradioButton">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="cLabel">
-                 <property name="font">
-                  <font>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>C </string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>cLineEdit</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="cLineEdit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>510</width>
-                   <height>32</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Century</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_8">
-               <item>
-                <widget class="QRadioButton" name="dradioButton">
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="dLabel">
-                 <property name="font">
-                  <font>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>D</string>
-                 </property>
-                 <property name="buddy">
-                  <cstring>dLineEdit</cstring>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="dLineEdit">
-                 <property name="minimumSize">
-                  <size>
-                   <width>510</width>
-                   <height>32</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Century</family>
-                   <pointsize>15</pointsize>
-                  </font>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignHCenter">
-         <widget class="QFrame" name="frame_3">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>822</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
-           <property name="spacing">
-            <number>0</number>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
            </property>
-           <property name="leftMargin">
-            <number>0</number>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
            </property>
-           <property name="topMargin">
-            <number>0</number>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QTextEdit" name="codesnippet_textedit">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <family>Century</family>
+                <pointsize>15</pointsize>
+               </font>
+              </property>
+              <property name="statusTip">
+               <string>Code Snippet</string>
+              </property>
+              <property name="placeholderText">
+               <string>&lt;Code Snippet&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QPushButton" name="submit_PushButton">
+           <property name="minimumSize">
+            <size>
+             <width>160</width>
+             <height>0</height>
+            </size>
            </property>
-           <property name="rightMargin">
-            <number>0</number>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
            </property>
-           <property name="bottomMargin">
-            <number>0</number>
+           <property name="font">
+            <font>
+             <family>Longdon Decorative</family>
+             <pointsize>17</pointsize>
+            </font>
            </property>
-           <item>
-            <widget class="QTextEdit" name="codesnippet_textedit">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <family>Century</family>
-               <pointsize>15</pointsize>
-              </font>
-             </property>
-             <property name="statusTip">
-              <string>Code Snippet</string>
-             </property>
-             <property name="placeholderText">
-              <string>&lt;Code Snippet&gt;</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </widget>
-        </item>
-        <item alignment="Qt::AlignHCenter">
-         <widget class="QPushButton" name="submit_PushButton">
-          <property name="minimumSize">
-           <size>
-            <width>160</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Longdon Decorative</family>
-            <pointsize>17</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Submit</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-  </layout>
+           <property name="text">
+            <string>Submit</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <tabstops>
-  <tabstop>question_textedit</tabstop>
-  <tabstop>alineEdit</tabstop>
-  <tabstop>bLineEdit</tabstop>
-  <tabstop>cLineEdit</tabstop>
-  <tabstop>dLineEdit</tabstop>
-  <tabstop>codesnippet_textedit</tabstop>
-  <tabstop>submit_PushButton</tabstop>
-  <tabstop>aradioButton</tabstop>
-  <tabstop>bradioButton</tabstop>
-  <tabstop>cradioButton</tabstop>
-  <tabstop>dradioButton</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

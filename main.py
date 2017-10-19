@@ -2,7 +2,7 @@
 #python version = 3.5
 
 import pymysql
-from ui import Ui_Dialog ;
+from ui import Ui_MainWindow ;
 from time import sleep
 from threading import Thread;
 import db_con
@@ -24,7 +24,7 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)
 
 
-class mywindow(QtWidgets.QDialog):
+class mywindow(QtWidgets.QMainWindow):
     def __init__(self,parent=None):
         QtWidgets.QDialog.__init__(self, parent)
         self.setMouseTracking(True) ;
@@ -34,8 +34,10 @@ class mywindow(QtWidgets.QDialog):
             con = pymysql.connect() ;
             cur = con.cursor() ;
             print("connection closed") ;
-            self.setToolTip("Developed By Natesh M Bhat") ;
-            sleep(1) ;
+            # obj = datahandler() ;
+            # obj.showtooltip( "Developed By Natesh M Bhat") ;
+            app.processEvents() ;
+
             cur.close() ;
             con.close() ;
 
@@ -114,13 +116,19 @@ Failed to Connect to Database : "{}" \nHost : "{}"
             QtWidgets.QMessageBox.warning(Dialog , "Empty Question field" , "Make sure that the question field is not Empty ! " , QtWidgets.QMessageBox.Ok) ;
             return ;
 
+        if not ui.tablename_LineEdit.text():
+            QtWidgets.QMessageBox.warning(Dialog, "Empty Table Name",
+                                          "Table name should not be empty ! Make sure that the right table name is specified ! ",
+                                          QtWidgets.QMessageBox.Ok);
+            return;
+
         opa = self.replace(ui.alineEdit.text()) ;
         opb = self.replace(ui.bLineEdit.text() ) ;
         opc = self.replace(ui.cLineEdit.text()  ) ;
         opd = self.replace(ui.cLineEdit.text() )  ;
         rightop = 'A' if ui.aradioButton.isChecked() else 'B' if ui.bradioButton.isChecked() else 'C' if ui.cradioButton.isChecked() else 'D' ;
         codesnippet = self.replace(ui.codesnippet_textedit.toPlainText()) ;
-
+        tablename = ui.tablename_LineEdit.text() ;
 
         try:
             self.con = pymysql.connect(host=self.url,
@@ -132,7 +140,7 @@ Failed to Connect to Database : "{}" \nHost : "{}"
 
             with self.con.cursor() as cur:
 
-                command = """insert into tablename (Question , optiona , optionb , optionc , optiond , correct , codesnippet) values (%s, %s , %s, %s , %s , %s , %s ) """ ;
+                command = """insert into {} (Question , optiona , optionb , optionc , optiond , correct , codesnippet) values (%s, %s , %s, %s , %s , %s , %s ) """.format(tablename) ;
                 strings = (
                     question ,
                     opa ,
@@ -149,13 +157,18 @@ Failed to Connect to Database : "{}" \nHost : "{}"
                     i.clear() ;
 
                 self.showtooltip("Added to Database");
+                self.con.close() ;
 
         except Exception as e:
+            print("Failed") ;
             self.showtooltip("Failed Adding to Database") ;
-            print(e) ;
-
-        finally:
-            self.con.close();
+            msgbox = QtWidgets.QMessageBox() ;
+            msgbox.setText("Error Adding Entry to Database") ;
+            msgbox.setWindowTitle("Error !") ;
+            msgbox.setIcon(QtWidgets.QMessageBox.Critical) ;
+            msgbox.setDetailedText(str(e)) ;
+            msgbox.exec_();
+            self.con.close() ;
 
 
 
@@ -165,7 +178,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     Dialog = mywindow()
     # Dialog.setWindowFlags(QtCore.Qt.FramelessWindowHint) ;
-    ui = Ui_Dialog()
+    ui = Ui_MainWindow()
     ui.setupUi(Dialog)
 
 
