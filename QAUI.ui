@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>DecodersQA</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>decoders.ico</normaloff>decoders.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
