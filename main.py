@@ -112,16 +112,6 @@ Failed to Connect to Database : "{}" \nHost : "{}"
     def connecttosql(self , event):
         question = self.replace(ui.question_textedit.toPlainText()) ;
 
-        if not question:
-            QtWidgets.QMessageBox.warning(Dialog , "Empty Question field" , "Make sure that the question field is not Empty ! " , QtWidgets.QMessageBox.Ok) ;
-            return ;
-
-        if not ui.tablename_LineEdit.text():
-            QtWidgets.QMessageBox.warning(Dialog, "Empty Table Name",
-                                          "Table name should not be empty ! Make sure that the right table name is specified ! ",
-                                          QtWidgets.QMessageBox.Ok);
-            return;
-
         opa = self.replace(ui.alineEdit.text()) ;
         opb = self.replace(ui.bLineEdit.text() ) ;
         opc = self.replace(ui.cLineEdit.text()  ) ;
@@ -129,6 +119,14 @@ Failed to Connect to Database : "{}" \nHost : "{}"
         rightop = 'A' if ui.aradioButton.isChecked() else 'B' if ui.bradioButton.isChecked() else 'C' if ui.cradioButton.isChecked() else 'D' ;
         codesnippet = self.replace(ui.codesnippet_textedit.toPlainText()) ;
         tablename = ui.tablename_LineEdit.text() ;
+
+        if not( question and opa and opb and opc and opd and rightop):
+            QtWidgets.QMessageBox.warning(Dialog , "Empty Fields" , "Make sure that all the Question and Options fields are filled before submitting them to the database the database before submitting them to the database") ;
+        if not ui.tablename_LineEdit.text():
+            QtWidgets.QMessageBox.warning(Dialog, "Empty Table Name",
+                                          "Table name should not be empty ! Make sure that the right table name is specified ! ",
+                                          QtWidgets.QMessageBox.Ok);
+            return;
 
         try:
             self.con = pymysql.connect(host=self.url,
@@ -140,21 +138,22 @@ Failed to Connect to Database : "{}" \nHost : "{}"
 
             with self.con.cursor() as cur:
 
-                command = """insert into {} (Question , optiona , optionb , optionc , optiond , correct , codesnippet) values (%s, %s , %s, %s , %s , %s , %s ) """.format(tablename) ;
+                command = """insert into {} (ques ,code , opta , optb, optc , optd , optright) values (%s, %s , %s, %s , %s , %s , %s ) """.format(tablename) ;
                 strings = (
                     question ,
+                    codesnippet,
                     opa ,
                     opb ,
-                    opc ,
+                    opc,
                     opd,
-                    rightop,
-                    codesnippet
+                    rightop
                 );
 
                 cur.execute(command , strings);
                 self.con.commit();
                 for i in ui.frame.findChildren((QtWidgets.QTextEdit , QtWidgets.QLineEdit)):
                     i.clear() ;
+                ui.tablename_LineEdit.setText(tablename) ;
 
                 self.showtooltip("Added to Database");
                 self.con.close() ;
