@@ -228,15 +228,26 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.tablename_LineEdit, self.question_textedit)
+        MainWindow.setTabOrder(self.question_textedit, self.alineEdit)
+        MainWindow.setTabOrder(self.alineEdit, self.bLineEdit)
+        MainWindow.setTabOrder(self.bLineEdit, self.cLineEdit)
+        MainWindow.setTabOrder(self.cLineEdit, self.dLineEdit)
+        MainWindow.setTabOrder(self.dLineEdit, self.codesnippet_textedit)
+        MainWindow.setTabOrder(self.codesnippet_textedit, self.submit_PushButton)
+        MainWindow.setTabOrder(self.submit_PushButton, self.cradioButton)
+        MainWindow.setTabOrder(self.cradioButton, self.bradioButton)
+        MainWindow.setTabOrder(self.bradioButton, self.dradioButton)
+        MainWindow.setTabOrder(self.dradioButton, self.aradioButton)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.question_label.setText(_translate("MainWindow", "Question"))
         self.tablename_LineEdit.setPlaceholderText(_translate("MainWindow", "Table Name"))
-        self.label_2.setText(_translate("MainWindow", "A"))
+        self.label_2.setText(_translate("MainWindow", " A"))
         self.bLabel_2.setText(_translate("MainWindow", "B"))
-        self.cLabel.setText(_translate("MainWindow", "C "))
+        self.cLabel.setText(_translate("MainWindow", "C"))
         self.dLabel.setText(_translate("MainWindow", "D"))
         self.codesnippet_textedit.setStatusTip(_translate("MainWindow", "Code Snippet"))
         self.codesnippet_textedit.setPlaceholderText(_translate("MainWindow", "<Code Snippet>"))

@@ -197,7 +197,7 @@
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>A</string>
+                   <string> A</string>
                   </property>
                   <property name="buddy">
                    <cstring>alineEdit</cstring>
@@ -281,7 +281,7 @@
                    </font>
                   </property>
                   <property name="text">
-                   <string>C </string>
+                   <string>C</string>
                   </property>
                   <property name="buddy">
                    <cstring>cLineEdit</cstring>
@@ -448,6 +448,20 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>tablename_LineEdit</tabstop>
+  <tabstop>question_textedit</tabstop>
+  <tabstop>alineEdit</tabstop>
+  <tabstop>bLineEdit</tabstop>
+  <tabstop>cLineEdit</tabstop>
+  <tabstop>dLineEdit</tabstop>
+  <tabstop>codesnippet_textedit</tabstop>
+  <tabstop>submit_PushButton</tabstop>
+  <tabstop>cradioButton</tabstop>
+  <tabstop>bradioButton</tabstop>
+  <tabstop>dradioButton</tabstop>
+  <tabstop>aradioButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
